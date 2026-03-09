@@ -1,26 +1,34 @@
-# JPMorgan Bloomberg Indexes
+# JPMorgan Bloomberg Market Intelligence Dashboard v1.1.0
 
-The JPMorgan Bloomberg Indexes project aims to provide comprehensive and transparent index solutions that meet various investment strategies and strategies. The project includes the development and maintenance of a suite of indexes, allowing asset managers, analysts, and investors to effectively benchmark and assess market performance.
+## 🚀 Project Overview
+A high-performance Java EE web application designed to simulate a **Bloomberg Terminal** interface for tracking JPMorgan and Global Market Indexes. Built with a focus on clean architecture, the system utilizes a decoupled Service Layer and a JSP-driven front end.
 
-## Features
-- Detailed index methodologies and frameworks
-- Regular updates and analytics
-- Comprehensive performance tracking
-- User-friendly information access
+## 🛠️ Technical Stack
+* **Backend:** Java 8 / Java 21 (Ubuntu Linux optimized)
+* **Server:** Jetty 9.4 (WebAppContext)
+* **Build Tool:** Maven 3.8.1
+* **Frontend:** JSP, JSTL 1.2, CSS3 (High-Contrast Terminal UI)
 
-## Getting Started
-To get started with the JPMorgan Bloomberg Indexes, please clone the repository and explore the available resources. 
+## 🏗️ Architecture
+The project follows a classic **MVC (Model-View-Controller)** pattern:
+* **Model:** `Index.java` - Handles financial data points including Tickers, Prices, and Percent Changes.
+* **View:** `index.jsp` - A protected resource within `WEB-INF` for secure rendering.
+* **Controller:** `HomeServlet.java` - Manages data flow and request forwarding.
 
-```bash
-# Clone the repository
-git clone https://github.com/LauroBeck/jpmorgan-bloomberg-indexes.git
-```
+## 🚦 Getting Started
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   ```
+2. **Compile and Run:**
+   ```bash
+   mvn clean jetty:run
+   ```
+3. **Access the Dashboard:**
+   Navigate to `http://localhost:8080/home`
 
-## Contributing
-Contributions to the JPMorgan Bloomberg Indexes project are welcome. Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to get involved.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-For additional inquiries, please reach out to LauroBeck.
+## 📊 Market Coverage
+* **BCOM:** Bloomberg Commodity Index
+* **JPM-EMBI:** J.P. Morgan Emerging Markets Bond Index
+* **SPX:** S&P 500 Index
+* **CCMP:** Nasdaq Composite

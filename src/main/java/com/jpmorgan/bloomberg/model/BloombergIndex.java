@@ -1,44 +1,29 @@
 package com.jpmorgan.bloomberg.model;
 
-import java.time.LocalDateTime;
-
-public class BloombergIndex {
-    private String indexName;
-    private String indexCode;
+public class BloombergIndex extends Index {
     private double currentValue;
-    private double previousClose;
-    private double change;
-    private double changePercent;
-    private LocalDateTime timestamp;
+    private double change;        // The nominal point change
+    private double changePercent; // The percentage change
 
-    public BloombergIndex(String indexCode, String indexName, double currentValue, double previousClose) {
-        this.indexCode = indexCode;
-        this.indexName = indexName;
+    // Standard constructor for the 4-arg call
+    public BloombergIndex(String ticker, String name, double currentValue, double changePercent) {
+        setTicker(ticker);
+        setName(name);
         this.currentValue = currentValue;
-        this.previousClose = previousClose;
-        this.change = currentValue - previousClose;
-        this.changePercent = (this.change / previousClose) * 100;
-        this.timestamp = LocalDateTime.now();
+        this.changePercent = changePercent;
     }
 
-    public String getIndexCode() { return indexCode; }
-    public void setIndexCode(String indexCode) { this.indexCode = indexCode; }
+    public BloombergIndex() {}
 
-    public String getIndexName() { return indexName; }
-    public void setIndexName(String indexName) { this.indexName = indexName; }
-
+    // Methods for Current Value
     public double getCurrentValue() { return currentValue; }
     public void setCurrentValue(double currentValue) { this.currentValue = currentValue; }
 
-    public double getPreviousClose() { return previousClose; }
-    public void setPreviousClose(double previousClose) { this.previousClose = previousClose; }
-
+    // Methods for Nominal Change (The missing symbols)
     public double getChange() { return change; }
     public void setChange(double change) { this.change = change; }
 
+    // Methods for Percentage Change
     public double getChangePercent() { return changePercent; }
     public void setChangePercent(double changePercent) { this.changePercent = changePercent; }
-
-    public LocalDateTime getTimestamp() { return timestamp; }
-    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 }
