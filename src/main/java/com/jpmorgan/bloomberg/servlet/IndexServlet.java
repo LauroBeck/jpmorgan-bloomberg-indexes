@@ -1,29 +1,21 @@
 package com.jpmorgan.bloomberg.servlet;
 
-import com.jpmorgan.bloomberg.model.BloombergIndex;
-import com.jpmorgan.bloomberg.model.IndexData;
+import com.jpmorgan.bloomberg.service.IndexService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
 
-@WebServlet("/index")
+@WebServlet("/market")
 public class IndexServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String indexCode = request.getParameter("code");
+    private final IndexService indexService = new IndexService();
 
-        if (indexCode != null && !indexCode.isEmpty()) {
-            BloombergIndex index = IndexData.getIndex(indexCode);
-            request.setAttribute("index", index);
-            request.getRequestDispatcher("/index-detail.jsp").forward(request, response);
-        } else {
-            Map<String, BloombergIndex> allIndexes = IndexData.getAllIndexes();
-            request.setAttribute("indexes", allIndexes);
-            request.getRequestDispatcher("/index-list.jsp").forward(request, response);
-        }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        request.setAttribute("indexes", indexService.getAllIndexes());
+        request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
 }
