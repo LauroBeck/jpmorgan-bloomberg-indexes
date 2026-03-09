@@ -17,11 +17,10 @@ public class IndexService {
     public List<Index> getAllIndexes() {
         List<Index> indexes = new ArrayList<>();
 
-        indexes.add(new Index("BCOM", "Bloomberg Commodity Index", 98.45, 0.12));
-        indexes.add(new Index("JPM-EMBI", "JPM Emerging Markets Bond", 104.20, -0.45));
-        indexes.add(new Index("SPX", "S&P 500 Index", 5123.30, 1.20));
-        indexes.add(new Index("CCMP", "Nasdaq Composite", 16274.94, 0.85));
-
+        indexes.add(new Index("CCMP", "Nasdaq Composite", 22387.68, -1.59));
+        indexes.add(new Index("SPX", "S&P 500 Index", 6740.02, -1.33));
+        indexes.add(new Index("BCOM", "Bloomberg Commodity", 131.49, 3.70));
+        indexes.add(new Index("JPM-EMBI", "JPM Emerging Markets Bond", 1025.62, -0.65));
         return indexes;
     }
 
