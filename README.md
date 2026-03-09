@@ -1,5 +1,17 @@
 # JPMorgan Bloomberg Market Intelligence Dashboard v1.1.0
 
+![Build Status](https://img.shields.io/badge/Build-Passing-089981?style=flat-square&logo=github)
+![Java Version](https://img.shields.io/badge/Java-8%20%2F%2021-ED8B00?style=flat-square&logo=openjdk)
+![Maven](https://img.shields.io/badge/Maven-3.8.1-C71A36?style=flat-square&logo=apache-maven)
+![Jetty](https://img.shields.io/badge/Server-Jetty%209.4-005C9C?style=flat-square&logo=eclipse-jetty)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)
+
+## 🚀 Project Overview
+A high-performance Java EE web application designed to simulate a **Bloomberg Terminal** interface for tracking JPMorgan and Global Market Indexes. Built with a focus on clean architecture, the system utilizes a decoupled Service Layer and a JSP-driven front end.
+
+
+# JPMorgan Bloomberg Market Intelligence Dashboard v1.1.0
+
 ## 🚀 Project Overview
 A high-performance Java EE web application designed to simulate a **Bloomberg Terminal** interface for tracking JPMorgan and Global Market Indexes. Built with a focus on clean architecture, the system utilizes a decoupled Service Layer and a JSP-driven front end.
 
